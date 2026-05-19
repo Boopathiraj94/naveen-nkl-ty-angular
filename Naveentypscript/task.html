@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <p>
+
+        Default parameter
+function welcome(name: string = "Guest") {}
+________________________________________
+5. Object Types
+let person: {
+  name: string;
+  age: number;
+} = {
+  name: "Boopathi",
+  age: 25
+};
+________________________________________
+In TypeScript, you can write functions without explicitly specifying a return type. TypeScript will infer (guess) the return type automatically.
+1. Without return type (Type inference)
+function add(a: number, b: number) {
+    return a + b;
+}
+
+let result = add(10, 20);
+console.log(result);
+✅ TypeScript infers return type as number
+Equivalent explicit version:
+function add(a: number, b: number): number {
+    return a + b;
+}
+________________________________________
+2. Arrow function without return type
+const multiply = (x: number, y: number) => {
+    return x * y;
+};
+TypeScript infers: number
+________________________________________
+3. String return
+function greet(name: string) {
+    return "Hello " + name;
+}
+Inferred return type: string
+________________________________________
+4. Boolean return
+function isAdult(age: number) {
+    return age >= 18;
+}
+Inferred return type: boolean
+________________________________________
+5. No return statement
+function printMessage(msg: string) {
+    console.log(msg);
+}
+Inferred return type: void
+Equivalent:
+function printMessage(msg: string): void {
+    console.log(msg);
+}
+________________________________________
+Why use explicit return type sometimes?
+For larger projects, explicit return types help readability:
+function getUser(): { name: string; age: number } {
+    return {
+        name: "Raj",
+        age: 25
+    };
+}
+Summary
+Without return type → TypeScript automatically infers it.
+function demo() {
+   return 100;   // inferred as number
+}
+
+
+    </p>
+</body>
+</html>
